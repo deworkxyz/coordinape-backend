@@ -104,7 +104,8 @@ class CircleRepository
             'default_opt_in',
             'discord_webhook',
             'only_giver_vouch',
-            'auto_opt_out'
+            'auto_opt_out',
+            'dework_organization_id'
         ));
 
         if (!$circle->vouching) {
