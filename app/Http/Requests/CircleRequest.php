@@ -33,6 +33,7 @@ class CircleRequest extends FormRequest
             'default_opt_in'  => !empty($data['default_opt_in']) ? $data['default_opt_in']:0,
             'only_giver_vouch'  => !empty($data['only_giver_vouch']) ? $data['only_giver_vouch']:0,
             'auto_opt_out' => !empty($data['auto_opt_out']) ? $data['auto_opt_out']:0,
+            'dework_organization_id' => !empty($data['dework_organization_id']) ? $data['dework_organization_id']:null,
         ]);
 
         if(array_key_exists('discord_webhook', $data) &&
@@ -64,7 +65,8 @@ class CircleRequest extends FormRequest
             'default_opt_in' => 'integer|min:0|max:1',
             'discord_webhook' => 'url',
             'only_giver_vouch' => 'integer|min:0|max:1',
-            'auto_opt_out' => 'integer|min:0|max:1'
+            'auto_opt_out' => 'integer|min:0|max:1',
+            'dework_organization_id' => 'string|nullable|max:5000'
         ];
     }
 }
